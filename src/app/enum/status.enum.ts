@@ -1,0 +1,3 @@
+export enum Status {
+    ALL = 'ALL', OPEN = 'OPEN', SCHEDULE = 'SCHEDULED', WAITING = 'WAITING', COMPLETED = 'COMPLETED'
+}
