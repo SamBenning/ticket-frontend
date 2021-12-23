@@ -1,0 +1,20 @@
+<div>
+
+<!-- {{ tickets | async | json }} -->
+<table>
+    <th>ID</th>
+    <th>Brief Description</th>
+    <th>Detailed Description</th>
+    <th>Status</th>
+    <tr *ngFor="let ticket of tickets" >
+        <td> {{ ticket.id }} </td>
+        <td> {{ ticket.briefDescription }} </td>
+        <td> {{ ticket.detailedDescription }} </td>
+        <td class="status"> 
+            <p>{{ ticket.ticketStatus}}</p> 
+            <button (click)="delete(ticket)"> Delete </button>
+        </td>
+    </tr>
+</table>
+
+</div>

@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+    background-color: salmon;
+    border-spacing: 0;
+}
+
+tr:nth-child(even) {
+    background-color: #CCC;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFa;
+}
+
