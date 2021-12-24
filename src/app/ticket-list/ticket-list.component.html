@@ -13,6 +13,7 @@
         <td class="status"> 
             <p>{{ ticket.ticketStatus}}</p> 
             <button (click)="delete(ticket)"> Delete </button>
+            <button (click)="setStatus('COMPLETED', ticket)">Mark Complete</button>
         </td>
     </tr>
 </table>

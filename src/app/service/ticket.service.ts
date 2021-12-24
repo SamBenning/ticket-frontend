@@ -49,6 +49,13 @@ export class TicketService {
         tap(console.log),
         catchError(this.handleError)
     );
+
+    update$ = (ticket: Ticket) => <Observable<CustomResponse>>
+    this.http.put<CustomResponse>(`${this.apiUrl}/ticket/put`, ticket)
+        .pipe(
+            tap(console.log),
+            catchError(this.handleError)
+        );
     
     delete$ = (ticketId: number) => <Observable<CustomResponse>>
     this.http.delete<CustomResponse>(`${this.apiUrl}/ticket/delete/${ticketId}`)

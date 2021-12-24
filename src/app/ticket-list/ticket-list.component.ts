@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketService } from '../service/ticket.service';
 import { Ticket } from '../interface/ticket';
+import { Status } from '../enum/status.enum';
+import { tick } from '@angular/core/testing';
 
   @Component({
     selector: 'app-ticket-list',
@@ -16,7 +18,6 @@ import { Ticket } from '../interface/ticket';
     ) { }
 
     fetchTickets(): void {
-      let tickets;
       this.ticketService.tickets$.subscribe( (data) => {
         this.tickets = data.data.tickets as Array<Ticket>;
       })
@@ -32,6 +33,21 @@ import { Ticket } from '../interface/ticket';
         this.fetchTickets();
 
       });
+    }
+
+    setStatus(statusString: string, ticket): void {
+      const statusEnum = (<any>Status)[statusString];
+      const updatedTicket: Ticket = {
+        id: ticket.id,
+        briefDescription: ticket.briefDescription,
+        detailedDescription: ticket.detailedDescription,
+        ticketStatus: statusString
+      };
+      this.ticketService.update$(updatedTicket).subscribe( (data) => {
+        console.log(data.timeStamp);
+        this.fetchTickets();
+      })
+      console.log(statusEnum);
     }
 
   }
