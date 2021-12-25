@@ -14,6 +14,8 @@
             <p>{{ ticket.ticketStatus}}</p> 
             <button (click)="delete(ticket)"> Delete </button>
             <button (click)="setStatus('COMPLETED', ticket)">Mark Complete</button>
+            <button (click)="setStatus('SCHEDULED', ticket)">Mark Scheduled</button>
+            <button (click)="setStatus('WAITING', ticket)">Mark Waiting</button>
         </td>
     </tr>
 </table>

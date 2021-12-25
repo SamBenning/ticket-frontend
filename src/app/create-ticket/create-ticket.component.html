@@ -1,0 +1,20 @@
+
+<div>
+    <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+        <div class="form-floating mb-3">
+            <input class= "form-control" id="briefDesc" formControlName='briefDescription' type=text placeholder="placeholder">
+            <label for='briefDesc'>Brief Description</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class= "form-control" style="height: 150px" id='detailedDesc' formControlName='detailedDescription' placeholder="placeholder"></textarea> 
+            <label for='detailedDesc'>Detailed Description</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class= "form-control" id='status' formControlName ='ticketStatus'type=text placeholder="placeholder">
+            <label for='status'>Status</label>
+        </div> 
+        <div class= "d-grid col-6 mx-auto">
+            <input class= "btn btn-primary btn-lg" type="submit" value="Create">
+        </div>
+    </form>
+</div>
